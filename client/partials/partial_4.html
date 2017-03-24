@@ -1,0 +1,14 @@
+<!-- Belt Exam Dashboard Page___ -->
+
+<div ng-controller="PartialControllerFour">
+  <a href="#!/"><button type="button" name="button" style="background-color: Blue; color:white;">Home</button></a>
+  <a href="#!/question/{{question._id}}/new_answer"><button type="button" name="button" style="background-color: orange; color:white;">Answer the Question</button></a>
+  <a href="/logout"><button type="button" name="button" style="background-color: red; color:white;">Logout</button></a>
+  <h1>{{question.title}}</h1>
+  <p>{{question.description}}</p>
+  <div ng-repeat="answer in question.answers | orderBy: '-createdAt'">
+    <p style="color:red">{{answer._user.name}}:</p>
+    <p style="color:red">{{answer.text}}</p>
+    <p style="color:red">{{answer.details}}</p>
+  </div>
+</div>

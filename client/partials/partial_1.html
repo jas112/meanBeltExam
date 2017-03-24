@@ -1,0 +1,28 @@
+<!-- MEAN Belt Exam Login Registration Page___ -->
+
+    <!-- Registration Form___ -->
+<div ng-controller="PartialControllerOne">
+  <form name="registerForm">
+    <h2>Not a member?! Register below!</h2>
+    <p>Name:</p>
+    <input type="text" ng-model="newUser.name" placeholder="Enter Name Here." required minlength="2">
+    <button ng-disabled="registerForm.$invalid" ng-click="registerUser(newUser)">Register</button>
+  </form>
+  <div ng-messages="registerForm.newUser.name.$error">
+    <p ng-message="required">User name is required.</p>
+    <p ng-message="minlength">User name must be at least 2 characters.</p>
+  </div>
+
+  <!-- Login Form___ -->
+
+  <form name="loginForm">
+    <p>Already a member?! Welcome back! Please login.</p>
+    <p>login and share your ideas.</p>
+    <input type="text" ng-model="user.name" required minlength="2" placeholder="Enter Name Here.">
+    <button ng-disabled="loginForm.$invalid" ng-click="loginUser(user)">Login</button>
+  </form>
+  <div ng-messages="loginForm.user.name.$error">
+    <p ng-message="required">User name is required.</p>
+    <p ng-message="minlength">User name must be at least 2 characters.</p>
+  </div>
+</div>

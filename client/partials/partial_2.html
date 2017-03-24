@@ -1,0 +1,20 @@
+<!-- Belt Exam Dashboard Page___ -->
+
+<div ng-controller="PartialControllerTwo">
+  <h1>Welcome, {{user.name}}!</h1>
+  <a href="/logout"><button type="button" name="button" style="background-color: red; color:white;">Logout</button></a>
+  <a href="#!/new_question">Add a Question</a>
+  <input type="text" ng-model="search.name"  placeholder="Search by Topic" style="width: 265px;">
+  <table>
+    <thead>
+      <th style="text-align: left;width: 220px;background-color: black;color:white;border:none; margin:0px;">Question</th>
+      <th style="text-align: left;width: 220px;background-color: black;color:white;border:none; margin:0px;">Answers</th>
+      <th style="text-align: left;width: 220px;background-color: black;color:white;border:none; margin:0px;">Action</th>
+    </thead>
+    <tr ng-repeat="question in queastions | orderBy: '-createdAt'">
+      <td>{{question.name}}</td>
+      <td>{{question.answers.count}}</td>
+      <td><a href="#!/question/{{question._id}}">Show</a><a href="#!/question/{{question._id}}/new_answer">Answer</a></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,14 @@
+<!-- Belt Exam NewQuestion Page___ -->
+
+<div ng-controller="PartialControllerThree">
+  <h1>New Question</h1>
+  <a href="#!/"><button type="button" name="button" style="background-color: Blue; color:white;">Home</button></a>
+  <a href="/logout"><button type="button" name="button" style="background-color: red; color:white;">Logout</button></a>
+  <form>
+    <p>Question:</p>
+    <textarea name="name" rows="4" cols="60" ng-model="newQuestion.title" placeholder="Enter your question here."></textarea>
+    <p>Description<span style="font-size:12px">(Optional)</span>:</p>
+    <textarea name="name" rows="4" cols="60" ng-model="newQuestion.description" placeholder="Enter question description here."></textarea>
+    <button type="button" ng-click="addQuestion(newQuestion)">Submit Question</button>
+  </form>
+</div>
